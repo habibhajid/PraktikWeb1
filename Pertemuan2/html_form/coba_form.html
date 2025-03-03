@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Sederhana</title>
+    <link rel="icon" type="img/png" href="gambar/icon.png" sizes="16x16">
+</head>
+<body>
+    <form action="/action_page.php">
+        <label for="depan">Nama Depan</label>
+        <input type="text" name="i_name" id="depan" value="Budi"><br>
+        <label for="n_belakang">Nama Belakang:</label>
+        <input type="text" name="i_belakang" id="n_belakang" value="Prawira"><br>
+        <input type="submit" value="Kirim">
+        <input type="reset" value="Reset">
+    </form>
+    <p>
+        - SETELAH DIJALANKAN ATAU DIKIRIM WEB TIDAK MERESPON KARENA FILE action_page.php TIDAK ADA DAN DI SKENARIO TIDAK ADA UNTUK MENYURUH MEMBUAT FILE action_page.php <br>
+    </p>
+    <form action="/action_page.php" target="_blank">
+        <label for="depan">Nama Depan</label>
+        <input type="text" name="i_name" id="depan" ><br>
+        <label for="n_belakang">Nama Belakang:</label>
+        <input type="text" name="i_belakang" id="n_belakang" ><br>
+        <input type="submit" value="Kirim">
+        <input type="reset" value="Reset">
+    </form>
+    <p>
+        - SETELAH MENAMBAH TARGET DI FORM DIKETAHUI BAHAWA TARGER <i>_self</i> MAKA SAAT DI KIRIM AKAN MUNCUL TAB ITU, SEDANGKAN TARGET  
+    </p>
+    <form method="get">
+        <label for="depan">Nama Depan</label>
+        <input type="text" name="i_name" id="depan" ><br>
+        <label for="n_belakang">Nama Belakang:</label>
+        <input type="text" name="i_belakang" id="n_belakang" ><br>
+        <input type="submit" value="Kirim">
+        <input type="reset" value="Reset">
+    </form>     <br>
+    <form method="post">
+        <label for="depan">Nama Depan</label>
+        <input type="text" name="i_name" id="depan" ><br>
+        <label for="n_belakang">Nama Belakang:</label>
+        <input type="text" name="i_belakang" id="n_belakang" ><br>
+        <input type="submit" value="Kirim">
+        <input type="reset" value="Reset">
+    </form>
+    <P>
+        - SETELAH DICOBA MENGGUNAKAN HAL TERSEBUT KEDUANYA SAMA SAMA MASUK DI INSPECT ATAU DATA MASUK KE  PAY LOAD UNTUK PERBEDAANYA ADALAH POST DIGUNAKAN UTUK DATA BESAR , SEDANGKAN GET DIGUNAKAN UNNTUK DATA SMENTARA ATA PERINTAH PERINTAH TERTETU <br>
+    </P>
+    
+</body>
+</html>
