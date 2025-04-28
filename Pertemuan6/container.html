@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Container</title>
+    <style>
+        .Container{
+            display: flex;
+            background-color: lightblue;
+            flex-direction: row-reverse;
+            /* flex-wrap: wrap; */
+            /* justify-content: space-around;  */
+            /* align-content: center; */
+            align-items: stretch;
+            height: 200px;
+        }
+        .Container > div{
+            background-color: antiquewhite;
+            margin: 10px;
+            padding: 20px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Membuat Container Text</h1>
+    <div class="Container">
+        <div style="order: 3; flex: 0 1 25%;">1</div>
+        <div style="order: 4;flex: 0 3 25%">2</div>
+        <div style="order: 2; flex: 5 0 25%">3</div>
+        <div style="flex: 5 1 25%">4</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar CSS Grid Box</title>
+    <style>
+        .tempat-grid{
+            display: grid;
+            grid-template-columns: auto auto auto;
+            background-color: #2196f3;
+            padding: 10px;
+            grid-gap: 50px;
+        }
+        .item-grid{
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.0);
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tampilan</h1>
+    <div class="tempat-grid">
+        <div class="item-grid">1</div>
+        <div class="item-grid">2</div>
+        <div class="item-grid">3</div>
+        <div class="item-grid">4</div>
+        <div class="item-grid">5</div>
+        <div class="item-grid">6</div>
+        <div class="item-grid">7</div>
+        <div class="item-grid">8</div>
+        <div class="item-grid">9</div>
+        <div>Skenario 1: Kode tersebut menggunakan CSS Grid untuk membuat tata letak tiga kolom otomatis dengan elemen berisi angka 1-9 dan satu div tambahan. Setiap item grid memiliki background, border, padding, serta teks yang terpusat agar tampilan lebih rapi</div>
+        <div>Skenario 2: Kode tersebut menggunakan CSS Grid untuk membuat layout tiga kolom, tetapi terdapat kesalahan pada display: -ms-inline-grid;, yang menyebabkan elemen ditampilkan dalam satu kolom. Setiap item dalam grid memiliki background putih transparan, border, padding, serta teks berukuran besar yang terpusat, dengan latar belakang utama berwarna biru.</div>
+        <div>Skenario 3: Kode tersebut menggunakan CSS Grid untuk menyusun elemen dalam tiga kolom dengan jarak antar kolom 10px dan antar baris 10px. Setiap item dalam grid memiliki background putih transparan, teks berukuran besar yang terpusat, serta ditampilkan dalam wadah berwarna biru dengan padding</div>
+        <div>Skenario 4: Kode tersebut menggunakan CSS Grid untuk menata elemen dalam tiga kolom dengan jarak antar item sebesar 50px menggunakan grid-gap. Setiap item dalam grid memiliki latar belakang putih transparan, teks yang terpusat, dan ditampilkan dalam wadah berwarna biru dengan padding. </div>
+    </div>
+</body>
+</html>

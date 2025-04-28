@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar Flex Box</title>
+    <style>
+        .wadah_flex{
+            display: flex;
+            background-color: darkgrey;
+            /* flex-wrap: wrap; */
+            /* flex-direction: column; */
+            flex-flow: row wrap;
+            justify-content: space-around;
+        }
+        .wadah_flex > div{
+            background-color: #4356ab;
+            margin: 10px;
+            padding: 20px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wadah_flex">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+    </div>
+    <p>Skenario 1: Ini adalah pembuatan layout dangan display flex</p>
+    <p>Skenario 2: Ini adalah pembuatan layout css untuk anak dari div wadah_flex</p>
+    <p>Skenario 3: Ini adalah pengggunaan flex direction yang dimana untuk menentukan arah di mana item fleksibel dalam elemen kontainer fleksibel</p>
+    <p>Skenario 4: Ini adalah penggunaan flex wrap yang dimana untuk sebuah container flex akan dibungkus ke baris atau kolom baru jika tidak muat dalam satu baris atau kolom </p>
+    <p>Skenario 5: Ini adalah pengggunaan flex flow yang dimana untuk untuk mengatur arah (direction) dan perilaku pembungkus (wrap) elemen-elemen flex </p>
+    <p>Skenario 6: Ini adalah pengggunaan justify-content dimana untuk mengatur posisi flex item di sepanjang sumbu utama dari container flex </p>
+</body>
+</html>
