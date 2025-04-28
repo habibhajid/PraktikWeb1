@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Beranda</title>
+    <meta name="author" content="Habib">
+    <meta name="nim" content="244311043">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        header{
+            background-color: #666;
+            padding: 30px;
+            text-align: center;
+            font-size: 35px;
+            color: white;
+        }
+        nav {
+            float: left;
+            width: 30%;
+            background: #ccc;
+            padding: 20px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        article {
+            float: left;
+            padding: 20px;
+            width: 70%;
+            background-color: #f1f1f1;
+        }
+        section::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        footer {
+            background-color: #777;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+        @media (max-width: 600px) {
+            nav, article {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+   <header>
+    <h2>Judul website</h2>
+   </header> 
+   <section>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gambar.html">Gambar</a></li>
+            <li><a href="event.html">Event</a></li>
+            <li><a href="audio.html">Audio</a></li>
+            <li><a href="video.html">Video</a></li>
+            <li><a href="svg.html">SVG</a></li>
+            <li><a href="canvas.html">Canvas</a></li>
+        </ul>
+    </nav>
+    <article>
+        <h1>Judul Artikel</h1>
+        <fieldset style="font-family: 'Times New Roman', Times, serif;">
+            <legend>Informasi Pribadi</legend>
+            <table>
+                <tr>
+                    <label for="nama">Nama </label>
+                    <input type="text" name="nama" id="nama">
+                </tr><br><br>
+                <tr>
+                    <label for="No.TLP">No. Telepon </label>
+                    <input type="text" name="NO.TLP" id="NO.TLP">
+                </tr><br><br>
+                <tr>
+                    <label for="AlamatE">Alamat Email </label>
+                    <input type="email" name="AlamatE" id="AlamatE">
+                </tr><br><br>
+                <tr>
+                    <label for="TL">Tanggal Lahir </label>
+                    <input type="date" name="TL" id="TL" min="1987-01-01" max="1993-01-01">
+                </tr><br><br>
+            </table>
+        </fieldset>
+        <fieldset style="font-family: 'Times New Roman', Times, serif;">
+            <legend>Permintaan Pertemuan</legend>
+            <table>
+                <tr>
+                    <label for="TP">Tujuan Pertemuan </label>
+                    <input type="text" name="TP" id="TP">
+                </tr><br><br>
+                <tr>
+                    <label for="TKP">Tingkat Kepentingan Pertemuan </label>
+                    <input type="range" name="TKP" id="TKP" min="1" max="10">
+                </tr><br><br>
+                <tr>
+                    <label for="TangP">Tanggal </label>
+                    <input type="date" name="TangP" id="TangP" min="2025-03-11">
+                </tr><br><br>
+                <tr>
+                    <label for="waktu">Waktu </label>
+                    <input type="time" name="waktu" id="waktu" min="17:00" max="21:00">
+                </tr><br>
+            </table>
+        </fieldset><br>
+        <input type="submit" name="submit" id="submit">
+    </article>
+   </section>
+   <footer>
+    <p>Footer</p>
+   </footer>
+   <script>
+    document.getElementById("waktu").addEventListener("input", function () {
+        let inputTime = this.value;
+        let minTime = "17:00";
+        let maxTime = "21:00";
+
+        if (inputTime < minTime) {
+            this.value = minTime;
+        } else if (inputTime > maxTime) {
+            this.value = maxTime;
+        }
+    });
+</script>
+</body>
+</html>

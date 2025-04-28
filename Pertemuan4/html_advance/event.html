@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Beranda</title>
+    <meta name="author" content="Habib">
+    <meta name="nim" content="244311043">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        header{
+            background-color: #666;
+            padding: 30px;
+            text-align: center;
+            font-size: 35px;
+            color: white;
+        }
+        nav {
+            float: left;
+            width: 30%;
+            background: #ccc;
+            padding: 20px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        article {
+            float: left;
+            padding: 20px;
+            width: 70%;
+            background-color: #f1f1f1;
+        }
+        section::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        footer {
+            background-color: #777;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+        @media (max-width: 600px) {
+            nav, article {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+   <header>
+    <h2>Judul website</h2>
+   </header> 
+   <section>
+    <nav>
+        <ul>
+            <li ><a href="index.html">Home</a></li>
+            <li><a href="gambar.html">Gambar</a></li>
+            <li><a href="event.html">Event</a></li>
+            <li><a href="audio.html">Audio</a></li>
+            <li><a href="video.html">Video</a></li>
+            <li><a href="svg.html">SVG</a></li>
+            <li><a href="canvas.html">Canvas</a></li>
+        </ul>
+    </nav>
+    <article>
+        <h1>Gambar Pemandangan</h1>
+        <img onmouseenter="bigImg(this)" onmouseleave="normalImg(this)"  src="gambar/gambar.jpg" alt="gambar" width="150px">
+        <img onmouseenter="bigImg(this)" onmouseleave="normalImg(this)"  src="gambar/gambar1.jpg" alt="1" width="150px">
+        <img onmouseenter="bigImg(this)" onmouseleave="normalImg(this)"  src="gambar/gambar2.jpg" alt="1" width="150px">
+        <img onmouseenter="bigImg(this)" onmouseleave="normalImg(this)"  src="gambar/gambar4.jpg" alt="1" width="150px">
+        <img onmouseenter="bigImg(this)" onmouseleave="normalImg(this)"  src="gambar/gambar5.jpg" alt="1" width="150px">
+        <img onmouseenter="bigImg(this)" onmouseleave="normalImg(this)"  src="gambar/gambar6.jpg" alt="1" width="150px">
+    </article>
+   </section>
+   <footer>
+    <p>Footer</p>
+   </footer>
+   <script>
+    function bigImg(x) {
+      x.style.width = "200px";
+    }
+    
+    function normalImg(x) {
+      x.style.width = "150px";
+    }
+    </script>
+</body>
+</html>
