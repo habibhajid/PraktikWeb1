@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery UI Download Dialog with Progressbar</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #download-dialog {
+            display: none;
+        }
+        .ui-progressbar {
+            position: relative;
+            height: 20px;
+            margin-top: 10px;
+        }
+        .progress-label {
+            position: absolute;
+            left: 50%;
+            top: 4px;
+            font-weight: bold;
+            text-shadow: 1px 1px 0 #fff;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+<body>
+    <h2>Download Dialog with Progressbar</h2>
+    <button id="startDownload">Mulai Unduhan</button>
+    <div id="download-dialog" title="Mengunduh File">
+        <p>Sedang mengunduh file...</p>
+        <div id="progressbar"><div class="progress-label">0%</div></div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $("#download-dialog").dialog({
+                autoOpen: false,
+                modal: true,
+                width: 400,
+                closeOnEscape: false,
+                dialogClass: "no-close",
+                buttons: {
+                    "Batalkan": function() {
+                        clearInterval(progressInterval); 
+                        $(this).dialog("close"); 
+                    }
+                }
+            });
+
+            $("#progressbar").progressbar({
+                value: 0
+            });
+
+            let progressInterval;
+
+            function updateProgress(value) {
+                $("#progressbar").progressbar("value", value);
+                $(".progress-label").text(value + "%");
+                if (value >= 100) {
+                    clearInterval(progressInterval);
+                    $("#download-dialog").dialog("option", "buttons", {
+                        "Tutup": function() {
+                            $(this).dialog("close");
+                        }
+                    });
+                    $(".ui-dialog-content p").text("Unduhan selesai!");
+                }
+            }
+
+            $("#startDownload").click(function() {
+                $("#download-dialog").dialog("open");
+                $("#progressbar").progressbar("value", 0);
+                $(".progress-label").text("0%");
+                $(".ui-dialog-content p").text("Sedang mengunduh file...");
+
+                let progress = 0;
+                progressInterval = setInterval(function() {
+                    progress += 5; 
+                    updateProgress(progress);
+                }, 200);
+            });
+        });
+    </script>
+</body>
+</html>

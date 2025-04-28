@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    var ppesan = "hai";
+    let pesan = "Selamat datang kawan";
+    let kosong;
+    let Mahasiswa = {
+        'nim' : 244311043,
+        'nama' : "habib hajid",
+        'alamat' : {
+            'desa' : "tokyo",
+            'jln' : "sura"
+        }
+    };
+    alert (ppesan);
+    
+    const port = 3306;
+    console.log(typeof (ppesan));
+    console.log(Mahasiswa['nim']);
+    console.log(Mahasiswa.alamat.desa);
+    let error = true;
+    if (error){
+        console.log("error")
+    }
+
+    for (const isi in Mahasiswa){
+        console.log(isi+":"+Mahasiswa[isi]);
+    }
+</script>
+    <h1>Hello DOM1</h1>
+    <p id="p">why</p>
+    <script>
+        let judul = document.querySelector("h1");
+        judul.textContent = "hi java";
+        let x = document.getElementById("p");
+    </script>
+<input type="radio" name="makanan" value="nasi-goreng">Nasi Goreng <br>
+<input type="radio" name="makanan" value="nasi-rebus">Nasi Rebus <br>
+<input type="radio" name="makanan" value="nasi-panggang">Nasi Panggang <br>
+<button id="pesan">Pesan</button>
+<p id="output">.....</p>
+<script>
+    let o = document.getElementById("output");
+    let tombol = document.getElementById("pesan");
+    tombol.addEventListener('click',()=>{
+        let pesanan = document.getElementsByName("makanan");
+        pesanan.forEach((p)=>{
+            if (p.checked){
+                o.innerText = "Anda Memilih "+ p.value ;
+            }
+        });
+    });
+</script>
+</body>
+</html>

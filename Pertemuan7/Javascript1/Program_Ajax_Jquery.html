@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery AJAX Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        #result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>jQuery AJAX Example</h2>
+    <h3>AJAX</h3>
+    <p>AJAX adalah teknik pengembangan web yang memungkinkan komunikasi antara klien (browser) dan server tanpa perlu memuat ulang seluruh halaman web. Dengan AJAX, data dapat diambil atau dikirim ke server secara asinkronus di latar belakang, sehingga meningkatkan interaktivitas dan kecepatan aplikasi web.</p><br>
+    <h3>jQuery</h3>
+    <p>jQuery adalah pustaka JavaScript yang ringan dan cepat, dirancang untuk menyederhanakan manipulasi DOM, penanganan event, animasi, dan permintaan AJAX. jQuery memungkinkan pengembang menulis kode yang lebih singkat dan kompatibel lintas browser</p>
+    <p></p>
+    <button id="fetchData">Ambil Data</button>
+    <div id="result"></div>
+
+    <script>
+        $(document).ready(function() {
+            // Ketika tombol diklik
+            $('#fetchData').click(function() {
+                // Lakukan permintaan AJAX
+                $.ajax({
+                    url: 'https://jsonplaceholder.typicode.com/posts/1', // API publik
+                    method: 'GET',
+                    success: function(data) {
+                        // Tampilkan data di elemen #result
+                        $('#result').html(`
+                            <h3>${data.title}</h3>
+                            <p>${data.body}</p>
+                        `);
+                    },
+                    error: function() {
+                        // Tampilkan pesan error jika gagal
+                        $('#result').html('<p>Terjadi kesalahan saat mengambil data.</p>');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

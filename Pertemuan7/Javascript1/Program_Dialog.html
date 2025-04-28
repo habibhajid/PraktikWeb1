@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery UI Basic Dialog</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #dialog {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h2>Basic Dialog with jQuery UI</h2>
+    <button id="openDialog">Buka Dialog</button>
+
+    <div id="dialog" title="Pesan Selamat Datang">
+        <p>Selamat datang di jendela dialog sederhana! Klik "OK" atau ikon tutup untuk menutup dialog ini.</p>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $("#dialog").dialog({
+                autoOpen: false, 
+                modal: true,    
+                width: 400,     
+                buttons: {
+                    "OK": function() {
+                        $(this).dialog("close"); 
+                    }
+                }
+            });
+
+            $("#openDialog").click(function() {
+                $("#dialog").dialog("open");
+            });
+        });
+    </script>
+</body>
+</html>
