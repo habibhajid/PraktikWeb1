@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combinator Selector</title>
+    <style>
+        div p{
+            color: red;
+        }
+        div > p {
+            background-color: yellow;
+        }
+        div + p{
+            background-color: darkgray;
+        }
+        div ~ p{
+            color: cyan;
+        }
+    </style>
+</head>
+<body>
+   <div>
+    <p>This is a paragraph. Selektor ini memilih semua elemen "p" yang berada di dalam elemen "div", tanpa memandang seberapa dalam di dalamnya</p>
+    <p>This is a paragraph. Selektor ini hanya memilih elemen "p" yang merupakan anak langsung dari elemen "div"</p>
+   </div>
+   <p>This is a paragraph. Selektor ini memilih elemen "p" pertama yang langsung mengikuti elemen "div" </p>
+   <p>This is a paragraph. Selektor ini memilih semua elemen "p" yang menjadi saudara dari "div" setelahnya, tidak hanya yang pertama.</p>
+</body>
+</html>
